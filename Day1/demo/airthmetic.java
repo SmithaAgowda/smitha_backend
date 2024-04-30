@@ -102,36 +102,47 @@ public class airthmetic {
 		System.out.println("Prime number Count is :" + count);
 	}
 	
+	public static void zigZag(int a[])
+    {
+        // Flag true indicates relation "<" is expected,
+        // else ">" is expected. The first expected relation
+        // is "<"
+        boolean flag = true;
+
+        int temp = 0;
+
+        for (int i = 0; i <= a.length - 2; i++) {
+            if (flag) /* "<" relation expected */
+            {
+                /* If we have a situation like A > B > C,
+                we get A > C < B by swapping B and C */
+                if (a[i] > a[i + 1]) {
+                    // swap
+                    temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                }
+            }
+            else /* ">" relation expected */
+            {
+                /* If we have a situation like A < B < C,
+                we get A < C > B by swapping B and C */
+                if (a[i] < a[i + 1]) {
+                    // swap
+                    temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                }
+            }
+            flag = !flag; /* flip flag */
+        }
+        System.out.println(Arrays.toString(a));
+    }
 	
-	public static void pattern1() {
-		int n=5;
-		for(int i=1;i<=n;i++) {
-			for(int j=1;j<=n;j++) {
-				if(j%2==0) {
-					System.out.print("0"+" ");
-				}
-				else {
-					System.out.print("1"+" ");
-				}
-			}
-			System.out.println();
-		}
-	}
-	
-	public static void pattern2() {
-		int n=5;
-		for(int i=1;i<=n;i++) {
-		
-			for(int j=1;j<=n;j++) {
-				System.out.print(j + "," + i + " ");	
-			}
-			System.out.println();
-		}
-	}
 	
 	public static void occurance(int arr[])
 	{
-        //Array fr will store frequencies of element  
+  
         int [] fr = new int [arr.length];  
         int visited = -1;  
         for(int i = 0; i < arr.length; i++){  
@@ -139,7 +150,7 @@ public class airthmetic {
             for(int j = i+1; j < arr.length; j++){  
                 if(arr[i] == arr[j]){  
                     count++;  
-                    //To avoid counting same element again  
+  
                     fr[j] = visited;  
                 }  
             }  
@@ -147,7 +158,6 @@ public class airthmetic {
                 fr[i] = count;  
         }  
   
-        //Displays the frequency of each element present in array  
         System.out.println("---------------------------------------");  
         System.out.println(" Element | Frequency");  
         System.out.println("---------------------------------------");  
@@ -162,7 +172,7 @@ public class airthmetic {
 
 	public static void main(String[] args)
 	{
-		int[] a = {1,2,5,6,8};
+		int[] a = {1,2,2,5,6,8};
 		int[] b = {1,3,5,7,8};
 		int[] intersec= intersection(a,b);
 		int[] arr = {1,2,5,2,6,1,8,5,2};
@@ -170,8 +180,7 @@ public class airthmetic {
 		System.out.println("intersection:" + Arrays.toString(intersec));
 		removeDuplicatesFromArray(arr);
 		primecount(b);
-		pattern1();
-		pattern2();
-		occurance(arr);
+		occurance(a);
+		zigZag(a);
 	}
 }
