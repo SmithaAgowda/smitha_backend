@@ -1,6 +1,6 @@
 package com.demo;
 
-public class pattern {
+public class Pattern {
 	
 	public static void patter1()
 	{
@@ -26,6 +26,9 @@ public class pattern {
 		System.out.println("=========================");
 	}
 
+	
+	
+	
 	public static void patter2()
 	{
 		
@@ -48,6 +51,8 @@ public class pattern {
 		}
 		System.out.println("=========================");
 	}
+	
+	
 	
 	
 
@@ -76,6 +81,8 @@ public class pattern {
 			
 		}
 	}
+	
+	
 	public static void pattern6()
 	{
 		
@@ -102,6 +109,8 @@ public class pattern {
 			a++;
 		}
 	}
+	
+	
 	public static void pattern7()
 	{
 		
@@ -128,6 +137,9 @@ public class pattern {
 			
 		}
 	}
+	
+	
+	
 	public static void pattern8()
 	{
 //			* * * * *
@@ -153,6 +165,8 @@ public class pattern {
 			
 		}
 	}
+	
+	
 	public static void pattern9()
 	{
 //			5 5 5 5 5
@@ -178,6 +192,8 @@ public class pattern {
 			
 		}
 	}
+	
+	
 	public static void pattern10()
 	{
 //			1
@@ -204,6 +220,9 @@ public class pattern {
 			
 		}
 	}
+	
+	
+	
 	public static void pattern11()
 	{
 //			1 2 3 4 5
@@ -228,6 +247,8 @@ public class pattern {
 			
 		}
 	}
+	
+	
 	public static void pattern12()
 	{
 ////		  * 
@@ -255,6 +276,8 @@ public class pattern {
 			
 		}
 	}
+	
+	
 	public static void pattern13()
 	{
 //			
@@ -278,6 +301,7 @@ public class pattern {
 			System.out.println();
 		}
 	}
+	
 	
 	public static void pattern14()
 	{
@@ -332,6 +356,7 @@ public class pattern {
 		}
 	}
 	
+	
 	public static void pattern16()
 	{
 //			
@@ -353,6 +378,8 @@ public class pattern {
 			System.out.println();
 		}
 	}
+	
+	
 	public static void pattern17()
 	{
 //			
@@ -378,6 +405,7 @@ public class pattern {
 			System.out.println();
 		}
 	}
+	
 	
 	public static void pattern18()
 	{
@@ -426,6 +454,7 @@ public class pattern {
 			System.out.println();
 		}
 	}
+	
 	
 	public static void pattern20()
 	{
@@ -542,6 +571,7 @@ public class pattern {
 			}
 		}
 	
+	
 	public static void pattern24()
 	{
 //          1 
@@ -655,6 +685,8 @@ public class pattern {
 		System.out.println("=========================");
 	}
 
+	
+	
 	public static void patter3()
 	{
 //		1
@@ -678,6 +710,8 @@ public class pattern {
 		System.out.println("=========================");
 	}
 	
+	
+	
 	public static void pattern27() 
 	{
 //		1,1 2,1 3,1 4,1 5,1 
@@ -698,6 +732,7 @@ public class pattern {
 		}
 	}
 
+	
 	public static void pattern28() 
 	{
 //		1 0 1 0 1 
@@ -725,6 +760,8 @@ public class pattern {
 			System.out.println();
 		}
 	}
+	
+	
 
 	public static void pattern29() 
 	{
@@ -761,6 +798,7 @@ public class pattern {
 
 	
 	
+	
 	public static void pattern30() 
 	{
 //  	    A
@@ -792,6 +830,8 @@ public class pattern {
         }
     }
 	
+	
+	
 	public static void pattern31() 
 	{
 //  	    A
@@ -821,6 +861,8 @@ public class pattern {
 	            System.out.println(); 
 	        }
 	    }
+	
+	
 	
 	
 	public static void pattern32() 
@@ -854,9 +896,10 @@ public class pattern {
 	    }
 	
 	
+	
 	public static void pattern33() 
 	{
-//////  	  543212345
+//////    543212345
 //		   4321234
 //		   32123
 //		    212
@@ -889,6 +932,7 @@ public class pattern {
 	            k--;
 	        }
 	    }
+	
 	
 	
 	public static void pattern34() 
@@ -930,6 +974,7 @@ public class pattern {
 	            System.out.println();
 	        }
 	    }
+	
 	
 	
 	public static void pattern35() 
@@ -1136,6 +1181,117 @@ public class pattern {
             System.out.println();
         }
     }
+	
+	
+	
+	public static void pattern39() 
+    {
+///// 	* * * * * 
+//		* *   * * 
+//		*   *   * 
+//		* *   * * 
+//		* * * * * 
+////		
+
+		int n=5;
+		for(int i=1;i<=n;i++) 
+		{
+			for(int j=1;j<=n;j++) 
+			{
+				if((i==j) || (i+j==n+1) || (i==1 || i==n) || (j==1 || j==n)) 
+				{
+					System.out.print("*" + " ");
+				}
+				else 
+				{
+					System.out.print(" " + " ");
+				}
+				
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public static void pattern40() 
+    {
+///     * * * * * 
+//		*   *   * 
+//		* * * * * 
+//		*   *   * 
+//		* * * * * 
+////		
+
+		int n=5;
+		for(int i=1;i<=n;i++) 
+		{
+			for(int j=1;j<=n;j++)
+			{
+				if((i==n/2+1) || (j==n/2+1) || (i==1 || i==n) || (j==1 || j==n)) 
+				{
+					System.out.print("*" + " ");
+				}
+				else
+				{
+					System.out.print(" " + " ");
+				}
+				
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public static void pattern41() 
+    {
+///     1 2 3 4 3 2 1 
+//		  2 3 4 3 2 
+//		    3 4 3 
+//		      4 
+//		    3 4 3 
+//		  2 3 4 3 2 
+//		1 2 3 4 3 2 1 
+
+////		
+		int n=7;
+		int sp=0,st=n,x=1;
+		for(int i=1;i<=n;i++) 
+		{
+			for(int j=1;j<=sp;j++)
+			{
+				System.out.print("  ");
+				
+			}
+			for(int j=1;j<=st;j++)
+			{
+				if(j<=st/2)
+			
+					System.out.print(x++ + " ");
+				
+					else
+					
+						System.out.print(x-- + " ");
+			}	
+				System.out.println();
+				if(i<=n/2)
+				{
+					sp++;
+					st-=2;
+					x=i+1;
+				}
+				else
+				{
+					sp--;
+					st+=2;
+				}
+		}
+    }
+
+		
+	
+	
+    
+    
 	public static void main(String[] args)
 	{
 //	 patter1();
@@ -1174,7 +1330,10 @@ public class pattern {
 		//pattern35();
 	//	pattern36();
 	//	pattern37();
-		pattern38();
+	//	pattern38();
+	//	pattern39();
+		//pattern40();
+		pattern41();
 		
 }
 }
