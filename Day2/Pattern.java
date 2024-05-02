@@ -1,6 +1,6 @@
 package com.demo;
 
-public class Pattern {
+public class pattern {
 	
 	public static void patter1()
 	{
@@ -726,6 +726,416 @@ public class Pattern {
 		}
 	}
 
+	public static void pattern29() 
+	{
+////	    1
+//		   1*2
+//		   1*2*3
+//		  1*2*3*4
+//		 1*2*3*4*5
+		
+		
+		
+		  int n=5;
+
+	        for (int i=1;i<=n;i++)
+	        {
+	            for (int j=1;j <=n-i;j++)
+	            {
+	                System.out.print(" ");
+	            }
+	            int num = 1;
+	            for (int k = 1; k <= i; k++)
+	            {
+	                System.out.print(num);
+	                if (k < i)
+	                {
+	                    System.out.print("*");
+	                }
+	                num++;
+	            }
+
+	            System.out.println();
+	        }
+	    }
+
+	
+	
+	public static void pattern30() 
+	{
+//  	    A
+//		   ABA
+//		   ABCBA
+//		  ABCDCBA
+//		 ABCDEDCBA
+
+		
+		
+		
+	    int A=65;
+        int n=5; 
+        for (int i=0;i<n;i++)
+        {
+            for (int j=0;j<(n-i)-1;j++)
+            {
+                System.out.print(" "); 
+            }
+            for (int j=0;j<=i;j++)
+            {
+                System.out.print((char)('A' + j)); 
+            }
+            for (int j=i-1;j>=0;j--)
+            {
+                System.out.print((char)('A' + j));
+            }
+            System.out.println(); 
+        }
+    }
+	
+	public static void pattern31() 
+	{
+//  	    A
+//		   BAB
+//		   CBABC
+//		  DCBABCD
+//		 EDCBABCDE
+
+		
+		
+		
+		  int n=5; 
+	        for (int i=0;i<n;i++)
+	        {
+	            for (int j=0;j<(n-i)-1;j++)
+	            {
+	                System.out.print(" "); 
+	            }
+	            for (int j=0;j<=i;j++)
+	            {
+	                System.out.print((char)('A' + i - j)); 
+	            }
+	            for (int j = 0; j < i; j++) 
+	            {
+	                System.out.print((char)('A' + j + 1)); 
+	            }
+	            System.out.println(); 
+	        }
+	    }
+	
+	
+	public static void pattern32() 
+	{
+////  	 123454321
+//		 1234321
+//		  12321
+//		   121
+//		    1
+
+		
+		
+		
+	     int n=5; 
+	        for (int i=0;i<n;i++) 
+	        {
+	            for (int j=0;j<i;j++)
+	            {
+	                System.out.print(" "); 
+	            }
+	            for (int j=1;j<=n-i;j++)
+	            {
+	                System.out.print(j); 
+	            }
+	            for (int j=(n-i)-1;j>=1;j--)
+	            {
+	                System.out.print(j); 
+	            }
+	            System.out.println(); 
+	        }
+	    }
+	
+	
+	public static void pattern33() 
+	{
+//////  	  543212345
+//		   4321234
+//		   32123
+//		    212
+//		     1
+
+
+		
+		
+		 int n = 5; 
+	        int k = n;
+	        
+	        for (int i=0;i<n;i++) 
+	        {
+	            for (int j=0;j<n-i-1;j++)
+	            {
+	                System.out.print(" "); 
+	            }
+	            
+	            for (int j = k; j >= 1; j--)
+	            {
+	                System.out.print(j); 
+	            }
+	            
+	            for (int j = 2;j<=n-i;j++)
+	            {
+	                System.out.print(j); 
+	            }
+	            
+	            System.out.println(); 
+	            k--;
+	        }
+	    }
+	
+	
+	public static void pattern34() 
+    {
+/////  	  *
+//		  ***
+//		  *****
+//		 *******
+//		  *****
+//		   ***
+//		    *
+
+
+		
+		
+		
+		  int n= 4; 
+	        for (int i=1;i<=n;i++)
+	        {
+	            for (int j=1;j<=n-i;j++)
+	            {
+	                System.out.print(" ");
+	            }
+	            for (int k=1;k<=(2*i)-1;k++)
+	            {
+	                System.out.print("*");
+	            }
+	            System.out.println();
+	        }
+	        for (int i=n-1;i>=1;i--)
+	        {
+	            for (int j=1;j<=n-i;j++)
+	            {
+	                System.out.print(" ");
+	            }
+	            for (int k=1;k<=(2*i)-1;k++){
+	                System.out.print("*");
+	            }
+	            System.out.println();
+	        }
+	    }
+	
+	
+	public static void pattern35() 
+    {
+/// 	 * * * * * 
+//		 * * * * 
+//		  * * * 
+//		   * * 
+//		    * 
+//		    * 
+//		   * * 
+//		  * * * 
+//		 * * * * 
+//		* * * * * 
+
+
+		
+		
+		
+		  int n= 5; 
+		  for (int i= 0; i<= n-1 ; i++)
+	        {
+	            for (int j=0; j <i; j++)
+	            {
+	                System.out.print(" ");
+	            }
+	            for (int k=i; k<=n-1; k++) 
+	            {
+	            System.out.print("*" + " ");
+	            } 
+	            System.out.println("");
+	            } 
+	            for (int i= n-1; i>= 0; i--)
+	         {
+	            for (int j=0; j< i ;j++)
+	            {
+	                System.out.print(" ");
+	            }
+	            for (int k=i; k<=n-1; k++)
+	            {
+	                System.out.print("*" + " ");
+	            }
+	            System.out.println("");
+	        }
+          }
+	
+	
+	
+	public static void pattern36() 
+    {
+/// 	    *
+//		   * *
+//		   *   *
+//		  *     *
+//		 *       *
+//		  *     *
+//		   *   *
+//		    * *
+//		     *
+
+
+
+		
+		
+		
+		 for (int i = 1; i <= 4; i++)
+	        {
+	            int n = 4;
+	   
+	            for (int j = 1; j<= n - i; j++) 
+	            { 
+	            System.out.print(" ");
+	            }
+	            for (int k = i; k >= 1; k--)
+	            {
+	                System.out.print(k);
+	            }
+	            for (int l = 2; l <= i; l++)
+	            { 
+	            System.out.print(l); 
+	            } 
+	            System.out.println(); 
+	            } 
+	            for (int i = 3; i >= 1; i--)
+	        {
+	            int n = 3;
+	   
+	            for (int j = 0; j<= n - i; j++) { System.out.print(" "); } for (int k = i; k >= 1; k--)
+	            {
+	                System.out.print(k);
+	            }
+	            for (int l = 2; l <= i; l++)
+	            {
+	                System.out.print(l);
+	            }
+	   
+	            System.out.println();
+	        }
+	       
+	    }
+
+	
+	public static void pattern37() 
+    {
+/// 	   1
+//		  212
+//		  32123
+//		 4321234
+//		  32123
+//		   212
+//		    1
+
+
+
+		
+		 for (int i=1;i<=4;i++)
+	        {
+	            int n=4;
+	   
+	            for (int j=1;j<=n-i;j++) 
+	            { 
+	            System.out.print(" ");
+	            }
+	            for (int k=i;k>=1;k--)
+	            {
+	                System.out.print(k);
+	            }
+	            for (int l=2;l<=i;l++)
+	            { 
+	            System.out.print(l); 
+	            } 
+	            System.out.println(); 
+	            } 
+	            for (int i=3;i>=1;i--)
+	        {
+	            int n = 3;
+	   
+	            for (int j=0;j<=n-i;j++)
+	            { 
+	            	System.out.print(" ");
+	            	} 
+	            for (int k=i;k>=1;k--)
+	            {
+	                System.out.print(k);
+	            }
+	            for (int l=2;l<=i;l++)
+	            {
+	                System.out.print(l);
+	            }
+	   
+	            System.out.println();
+	        }
+	       
+	    }
+	
+	
+	public static void pattern38() 
+    {
+///// 	   1
+//		  121
+//		  12321
+//		 1234321
+//		  12321
+//		   121
+//		    1 
+//		
+
+
+			int n=4;
+        
+       
+        for (int i=1;i<=n;i++)
+        {
+            for (int j=1;j<=n-i;j++)
+                System.out.print(" ");
+
+            for (int k=1;k<=i;k++)
+            {
+                System.out.print(k);
+            }
+            
+            for (int l=i-1;l>=1;l--)
+            {
+                System.out.print(l);
+            }
+            
+            System.out.println();
+        }
+        for (int i=n-1; i>=1;i--)
+        {
+            for (int j=1;j<=n-i;j++)
+                System.out.print(" ");
+
+            for (int k=1;k<=i;k++)
+            {
+                System.out.print(k);
+            }
+            
+            for (int l=i-1;l>=1;l--)
+            {
+                System.out.print(l);
+            }
+            
+            System.out.println();
+        }
+    }
 	public static void main(String[] args)
 	{
 //	 patter1();
@@ -754,8 +1164,17 @@ public class Pattern {
 		//pattern24();
 		//pattern25();
 		//pattern26();
-		pattern27();
+		//pattern27();
 		//pattern28();
+		//pattern29();
+		//pattern31();
+	//	pattern32();
+	//	pattern33();
+	//	pattern34();
+		//pattern35();
+	//	pattern36();
+	//	pattern37();
+		pattern38();
 		
 }
 }
