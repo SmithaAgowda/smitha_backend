@@ -1286,9 +1286,37 @@ public class Pattern {
 				}
 		}
     }
-
-		
 	
+	public static void pattern42() 
+    {
+///     1 2 3 4 3 2 1 
+//		  2 3 4 3 2 
+//		    3 4 3 
+//		      4 
+//		    3 4 3 
+//		  2 3 4 3 2 
+//		1 2 3 4 3 2 1 
+
+////		
+		int n=5;
+		for(int i=n;i>0;i--) 
+		{ 
+			for(int j=1;j<(2*n);j++) 
+			{ 
+				if(j<i) 
+					System.out.print("  "); 
+				else if(j>(2*n-i)) 
+					continue; 
+				else if(j>n) 
+					System.out.print((2*n)-j+" ");		 
+				else  
+					System.out.print(j+" ");				 
+			} 
+			System.out.println();	
+		}
+		
+	}
+
 	
     
     
@@ -1333,7 +1361,8 @@ public class Pattern {
 	//	pattern38();
 	//	pattern39();
 		//pattern40();
-		pattern41();
+	//	pattern41();
+		pattern42();
 		
 }
 }
