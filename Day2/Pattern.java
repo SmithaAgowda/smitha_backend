@@ -1,3 +1,6 @@
+
+
+
 package com.demo;
 
 public class Pattern {
@@ -302,6 +305,24 @@ public class Pattern {
 		}
 	}
 	
+	ublic void pattern12()
+	{
+		/*
+		 5 4 3 2 1
+		 4 3 2 1 
+		 3 2 1
+		 2 1
+		 1
+		 */
+		for(int i=1; i<=5; i++)
+		{
+			for(int j=5; j>=i; j--)
+			{
+				System.out.print(j +" ");
+			}
+			System.out.println();
+		}
+	}
 	
 	public static void pattern14()
 	{
