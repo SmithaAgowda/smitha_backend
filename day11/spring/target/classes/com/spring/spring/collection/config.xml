@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="https://www.springframework.org/schema/context"
+	xmlns:p="https://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	
+	<util:list list-class="java.util.ArrayList" id="phones">
+		
+		<value>356974564</value>
+		<value>45454</value>
+		<value>356974564</value>
+		
+	</util:list>
+	
+	<util:map map-class="java.util.HashMap" id="nominees">
+		<entry key="mother" value="100"></entry>
+	</util:map>
+	<bean name="employee" class="com.spring.spring.collection.Employee">
+		
+		<property name="name" value="John"></property>
+		
+		<property name="phones" ref="phones">
+			<!--<list>
+				<value>2589631478</value>
+				<value>2589631478</value>
+				<value>2589631478</value>
+			</list>-->
+		</property>
+		
+		<property name="skills">
+			<set>
+				<value>java</value>
+				<value>javascript</value>
+			</set>
+		</property>
+		
+		<property name="nominees" ref="nominees">
+		<!--	<map>
+				<entry key="father" value="100"></entry>
+			</map>-->
+		</property>
+	</bean>
+	
+</beans> 
