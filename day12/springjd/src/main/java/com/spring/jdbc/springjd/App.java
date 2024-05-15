@@ -10,32 +10,62 @@ import com.spring.jdbc.springjd.entities.Student;
 
 public class App 
 {
+	private static ApplicationContext act;
+	
     public static void main( String[] args )
     {
        ApplicationContext context = new  AnnotationConfigApplicationContext(JdbcConfig.class);
        
-       StudentsDao dao = context.getBean("studentDao",StudentsDao.class);
+       act = new AnnotationConfigApplicationContext(JdbcConfig.class);
+       //insertion
+//       StudentsDao dao = context.getBean("studentDao",StudentsDao.class);
        
-       Student student = new Student();
-       student.setId(8);
-       student.setName("john");
-       student.setCity("mysore");
+//       Student student = new Student();
+//
+//       student.setId(5);
+//       student.setName("Yatharth");
+//       student.setCity("mysore");
+//
+//		int res = dao.create(student);
+//
+//		if (res != 0) {
+//			System.out.println("Inserted Successfully");
+//		} else {
+//			System.out.println("Insertion Failed");
+//		}
+//
+//		act = new AnnotationConfigApplicationContext(JdbcConfig.class);
+
+       //select using list
+		StudentsDao dao1 = act.getBean("studentDao", StudentsDao.class);
+		System.out.println(dao1.select());
        
-       int res = dao.insertStudent(student);
-       System.out.println(res);
        
+       //maping by id
+//      Student student = new Student();
+//      student.setId(4);
+//		StudentsDao dao1 = act.getBean("studentDao", StudentsDao.class);
+//		System.out.println(dao1.select(student));
+
        
-       Student student2 = new Student();
-       student.setId(4);
-       int res1 = dao.deleteStudent(student2);
+       //deleting
+//       Student student = new Student();
+//       student.setId(4);
+//       StudentsDao dao1 = act.getBean("studentDao", StudentsDao.class);   
+//       System.out.println(dao1.delete(student)); 
+//       
+       //update
+//       Student student = new Student();
+//       student.setCity("Bangalore");
+//       student.setId(1);
+//       
+//       StudentsDao dao1 = act.getBean("studentDao", StudentsDao.class); 
+//       System.out.println(dao1.update(student)); 
+       
       
-       System.out.println(res1);
        
-  
-       Student student1 = new Student();
-       student1.setName("Disha");
-       boolean res2 = dao.updateStudent(student1);
-       System.err.println(res2);
        
-    }
+		
+	}
+       
 }

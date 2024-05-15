@@ -1,6 +1,10 @@
 package com.spring.jdbc.springjd.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -13,25 +17,30 @@ public class StudentDaoImp  implements StudentsDao{
 	private JdbcTemplate jdbcTemplate;
 
 	
-	@Override
-	public int insertStudent(Student student) {
-		
-		String query = "insert into student (idstudent,name,city) values (?,?,?)";
-		return jdbcTemplate.update(query,student.getId(),student.getName(),student.getCity());
+	public List<Student> select(){
+		String query = "select * from student";
+		List<Student>students = jdbcTemplate.query(query, new BeanPropertyRowMapper<Student>(Student.class));
+		return students;
+	}
+	public Map<String, Object> select(Student student) {
+		String query = "select * from student where idstudent = ?";
+		return jdbcTemplate.queryForMap(query, student.getId());
 	}
 	
-	@Override
-	public int deleteStudent(Student student2) {
-		
-		String query1 ="delete from student where idstudent=?";
-		return jdbcTemplate.update(query1,student2.getId());
+	public int create(Student student) {
+		String query = "insert into student (idstudent, name, city) values (? , ? , ?)";
+		return jdbcTemplate.update(query, student.getId(), student.getName(), student.getCity());
 	}
-	
-	@Override
-	public boolean updateStudent(Student student)
-	{
-		String query2 ="update student set name = ?, city = ? where idstudent = ?";
-		return jdbcTemplate.update(query2,student.getName(),student.getCity(),student.getId())>=1;
+
+	public int delete(Student student) {
+		String query = "delete from student where idstudent = ?";
+		return jdbcTemplate.update(query, student.getId());
 	}
+
+	public int update(Student student) {
+		String query = "update student set city = ?  where idstudent = ?";
+		return jdbcTemplate.update(query, student.getCity(),student.getId());
+	}
+
 	
 }

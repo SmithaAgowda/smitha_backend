@@ -36,6 +36,11 @@ public class Student {
 		super();
 		
 	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", city=" + city + "]";
+	}
+
 	
 	
 	
