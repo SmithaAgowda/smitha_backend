@@ -2,12 +2,15 @@ package com.excel.lms.entity;
 
 import com.excel.lms.enums.AddressType;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +30,7 @@ public class EmployeeAddressDetails {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer empAddrsId;
 	
 	@Enumerated(EnumType.STRING)
 	private AddressType addressType;
@@ -38,4 +41,7 @@ public class EmployeeAddressDetails {
 	private String state;
 	private String pincode;
 	private String landMark;
+	
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	private EmployeePrimaryInfo employee;
 }
